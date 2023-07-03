@@ -1,0 +1,13 @@
+version: '2'
+services:
+  clamav:
+    image: "clamav/clamav:stable"
+    container_name: "clamav-docker"
+    restart: unless-stopped
+    ports:
+      - 3310:3310
+    volumes:
+      -  clam:/var/lib/clamav
+
+volumes:
+  clam:
